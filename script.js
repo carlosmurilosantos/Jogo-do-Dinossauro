@@ -5,13 +5,13 @@ let isJumping = false;
 let isGameOver = false;
 let position = 0;
 
-function handleKeyUp(event){
+function handleKeyUp(event) {
     if (event.keyCode === 32) {
-        if(!isJumping){
-            jump();
-        }
+      if (!isJumping) {
+        jump();
+      }
     }
-}
+  }
 
 function jump() {
     
@@ -50,8 +50,8 @@ function createCactus() {
     cactus.style.left = 1000 + 'px';
   
 
-    let leftInterval = setInterval(() => {
-    cactusPosition -= 10;
+    cactus.classList.add('cactus');
+    background.appendChild(cactus);
     cactus.style.left = cactusPosition + 'px';
 
     let leftTimer = setInterval(() => {
@@ -74,5 +74,4 @@ function createCactus() {
 }
 
 createCactus();
-
 document.addEventListener('keyup', handleKeyUp);
